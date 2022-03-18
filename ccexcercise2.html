@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js</title>
+</head>
+
+<body>
+    <h1 id="id-1" class="cat-1">The color of this cat is yellow</h1>
+    <h1 id="id-2" class="cat-2">The color of this cat is while</h1>
+    <p id="id-3" class="cat-1">cat is very naughty</p>
+    <p id="id-4" class="cat-2">cat is very silent</p>
+</body>
+<script>
+    var cat1 = document.getElementsByClassName("cat-1");
+    
+    print(cat1);
+    
+    function print(p)
+    {
+        for(i=0;i<p.length;i++) { 
+            cat1[i].innerHTML="the element belongs to category";
+         }
+
+    }
+</script>
+</html>

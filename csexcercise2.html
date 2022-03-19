@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js</title>
+    
+</head>
+
+<body>
+    <input id="col"type="text" placeholder="ente the size">
+    <h1 id="id-1" class="cat-1">The color of this cat is yellow</h1>
+    <h1 id="id-2" class="cat-2">The color of this cat is while</h1>
+    <p id="id-3" class="cat-1">cat is very naughty</p>
+    <p id="id-4" class="cat-2">cat is very silent</p>
+    <button onclick="color()">Click me</button>
+</body>
+<script>
+    function color(){
+    var c=document.getElementById("col").value;
+    document.getElementById("id-1").style.fontSize=c;
+    }
+</script>
+</html>

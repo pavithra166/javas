@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>changestyle</title>
+    </head>
+    <body>
+        <h1 id="id1">pavithra</h1>
+        <h2 id="id2">jayapalan</h2>
+        <input id="ip1" placeholder="enter the id">
+        <input id="ip2" placeholder="enter size,color,margin">
+        <input id="ip3" placeholder="enter the value">
+        <button id="b1" onclick="change()">Click Me</button>
+        
+    </body>
+    <script>
+        function change(){
+        var i=document.getElementById("ip1").value;
+        var i2=document.getElementById("ip2").value;
+        var i3=document.getElementById("ip3").value;
+        if(i2=="size"){
+            document.getElementById(i).style.fontSize=i3;
+        }
+        else if(i2=="color"){
+            document.getElementById(i).style.color=i3;
+        }
+        else if(i2=="margin"){
+            document.getElementById(i).style.margin=i3;
+        }
+    }
+    </script>
+</html>

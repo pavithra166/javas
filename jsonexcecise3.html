@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="city"></p>
+    <script>
+        var json_input = '{"response": {"authorization": false}}';
+        var json_object = JSON.parse(json_input);
+        var id = json_object.response.authorization;
+        
+        if(id==true)
+        {
+            document.getElementById("city").innerHTML = "Success";
+        }
+        else{
+            document.getElementById("city").innerHTML = "Failed";
+        }
+        
+    </script>
+</body>
+
+</html>

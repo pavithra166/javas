@@ -1,0 +1,15 @@
+{
+    "continent": "Asia",
+    "countryname": "India",
+    "population": "1,402,874,048",
+    "list of cities": [
+        {
+            "name": "chennai",
+            "population": "7,088,000"
+        },
+        {
+            "name":"mumbai",
+            "population":"20,961,472"
+        }
+    ]
+}

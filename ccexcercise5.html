@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js</title>
+    
+</head>
+
+<body>
+    
+    <h1 id="id-1"></h1>
+    <h2 id="id-2"></h2>
+    <p id="id-3"></p>
+    <h2 id="id-4">Hobbies</h2>
+        <ol>
+            <li id="l1"></li>
+            <li id="l2"></li>
+            <li id="l3"></li>
+        </ol>
+</body>
+<script>
+    var title=prompt("enter the tile");
+    var about=prompt("enter the about");
+    var actualabout=prompt("enter the actualabout");
+    var hobbies =prompt("enter the three hobbies");
+    var id1=document.getElementById("id-1");
+    id1.innerHTML=title;
+    var id2=document.getElementById("id-2");
+    id2.innerHTML=about;
+    var id3=document.getElementById("id-3");
+    id3.innerHTML=actualabout;
+    var hob=hobbies.split(",");
+    var l1=document.getElementById("l1");
+    l1.innerHTML=hob[0];
+    var l2=document.getElementById("l2");
+    l2.innerHTML=hob[1];
+    var l3=document.getElementById("l3");
+    l3.innerHTML=hob[0];
+
+</script>
+</html>

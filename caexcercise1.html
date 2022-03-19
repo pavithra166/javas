@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Get Image</title>
+</head>
+
+<body>
+    <input id="ip1" type="text" placeholder="Enter the src of an image">
+    <br>
+    <input id="ip2" type="text" placeholder="Enter the height of the image (px)">
+    <br>
+    <input id="ip3" type="text" placeholder="Enter the width of the image (px)">
+    <br>
+    <button onclick="getSrc()">Update Source</button>
+    <br>
+    <img id="img1" src="">
+    <script>
+        function getSrc() {
+            var s = document.getElementById("ip1").value;
+            var h = document.getElementById("ip2").value;
+            var w = document.getElementById("ip3").value;
+
+            alert(s);
+
+            document.getElementById("img1").src = s;
+            document.getElementById("img1").height = h;
+            document.getElementById("img1").width = w;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js</title>
+
+</head>
+
+<body>
+    <input id="n1" placeholder="enter the n1">
+    <input id="n2" placeholder="enter the n2">
+    <input id="op" placeholder="enter the operation to be performed">
+    <button id="btn">Click Me</button>
+    <p id="id1"></p>
+</body>
+<script>
+    document.getElementById("btn").addEventListener("click",sayhello);
+    function sayhello(){
+        var i1=document.getElementById("n1").value;
+        var i2=document.getElementById("n2").value;
+        var i3=document.getElementById("op").value;
+        var value;
+        if(i3=="add"){
+        value=parseInt(i1)+parseInt(i2);
+        }
+        else if(i3=="sub")
+        {
+            value=parseInt(i1)-parseInt(i2);
+        }
+        else if(i3=="mul")
+        {
+            value=parseInt(i1)*parseInt(i2);
+        }
+        else if(i3=="div")
+        {
+            value=parseInt(i1)/parseInt(i2);
+        }
+        var id=document.getElementById("id1");
+        id.innerHTML=value;
+    }
+</script>
+</html>

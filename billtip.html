@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BillTipCalculator</title>
+    <style>
+        body{
+            
+            color:black;
+        }
+        #id1 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #003366;
+            padding: 0;
+            margin-bottom: 2px;
+            font-family: 'Arima Madurai', cursive;
+        }
+        .main{
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            padding-left: 30px;
+            padding-top: 20px;
+            height: 50px;
+            font-size: 20px;
+        }
+        table {
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 2px;
+        background-color: rgb(197, 189, 189);
+        padding: 5px;
+        font-size: large;
+
+    }
+        
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Arima+Madurai:wght@100;900&family=Pathway+Gothic+One&family=Sansita+Swashed:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1 id="id1">Shared Bill Tip Calculator</h1>
+    <p style="font-weight: bold;font-family: 'Arima Madurai', cursive;">The Shared Bill Tip Calculator considers the cost of the service, number of people, and chosen tip percentage to
+        calculate the tip per person, as well as the total cost per person.</p>
+        <div class="main">Result</div>
+        <table style="background-color: white;">
+            <tr>
+                <td id="d1"></td>
+                <td align="right" id="d11"></td>
+            </tr>
+            <tr>
+                <td id="d2"></td>
+                <td align="right" id="d22"></td>
+            </tr>
+            <tr>
+                <td id="d3"></td>
+                <td align="right" id="d33"></td>
+            </tr>
+            <tr>
+                <td id="d4"></td>
+                <td align="right" id="d44"></td>
+            </tr>
+        </table>
+    
+        <table>
+            <tr>
+                <td>Price</td>
+                <td align="right"><input id="ip1" type="text"></td>
+                
+            </tr>
+            <tr>
+                <td>Tip %</td>
+                <td align="right"><input id="ip2" type="text"></td>
+            </tr>
+            <tr>
+                <td>Number of People</td>
+                <td align="right"><input id="ip3" type="text" name="numberofpeople"></td>
+            </tr>
+            <tr>
+                <td>Rate your Service</td>
+                <td align="right">
+                    <select id="fb">
+                        <option value="manual">Manual</option>
+                        <option value="great">Great</option>
+                        <option value="alright">Alright</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="calculate()"
+                        style="background-color:#518428; color: white;font-size: large;">Calculate</button></td>
+                        <td align="center" ><button onclick="clearVal()" style="background-color: gainsboro; font-size: large;">Clear</button></td>
+            </tr>
+    
+        </table>
+</body>
+<script>
+    function calculate(){
+    var price=document.getElementById("ip1").value;
+    var tip;
+    var decide=document.getElementById("fb").value;
+        switch(decide)
+        {
+            case "manual":
+                tip=document.getElementById("ip2").value;
+                break;
+            case "great":
+                tip=20;
+                break;
+            case "alright":
+                tip=10;
+                break;
+            case "poor":
+                tip=5;
+                break;
+        }
+        var pe = document.getElementById("ip3").value;
+        var t1 = price * tip / 100;
+        var t2 = parseInt(price) + parseInt(t1);
+        var t3 = t1 / pe;
+        var t4 = t2 / pe;
+        document.getElementById("d1").innerHTML = "Tip: ";
+        document.getElementById("d11").innerHTML = t1 + "$";
+
+        document.getElementById("d2").innerHTML = "Total Amount: ";
+        document.getElementById("d22").innerHTML = t2 + "$";
+
+        document.getElementById("d3").innerHTML = "Tip Per Person: ";
+        document.getElementById("d33").innerHTML = t3 + "$";
+
+        document.getElementById("d4").innerHTML = "Total Per Person: ";
+        document.getElementById("d44").innerHTML = t4 + "$";
+    }
+    function clearVal()
+    {
+        document.getElementById("ip1").value=' ';
+        document.getElementById("ip2").value=' ';
+        document.getElementById("ip3").value=' ';
+
+    }
+</script>
+
+</html>

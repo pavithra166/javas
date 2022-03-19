@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Json</title>
+</head>
+
+<body>
+    <label>USER NAME:</label>
+    <input type="text" id="ip1" placeholder="enter the username">
+    <br>
+    <label>PASSWORD</label>
+    <input type="password" id="ip2" placeholder="enter the password">
+    <br>
+    <button id="btn" onclick="save()">Save</button>
+    <p id="id1"></p>
+</body>
+<script>
+    function save(){
+    var name=document.getElementById("ip1").value;
+    var pass=document.getElementById("ip2").value;
+    var person = { name: name, password:pass };
+    var json_output = JSON.stringify(person);
+    var id=document.getElementById("id1");
+    id.innerHTML=json_output;
+    
+    }
+</script>
+
+</html>

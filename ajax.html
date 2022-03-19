@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div id="demo">
+		<h2>This is a AJAX Demo</h2>
+		<button type="button" onclick="loadData()">Get me the data</button>
+        <img id="id-1" src=" ">
+	</div>
+
+	<script>
+		function loadData() {
+            fetch(`https://api.allorigins.win/get?url=${encodeURIComponent('https://aws.random.cat/meow')}`)
+                .then(response => {
+                    if (response.ok) return response.json();
+                    throw new Error('Network response was not ok.');
+                })
+                .then(data => {
+                    console.log(data.contents);
+                    var json_object = JSON.parse(data.contents);
+                    console.log(json_object);
+                    var i=json_object.file;
+                    document.getElementById("id-1").src = i;
+                    // var id=document.getElementById("id-1");
+                    // id.innerHTML=json_object.name;
+                    /*console.log(json_object.name);
+                    console.log(json_object.age);
+                    console.log(json_object.occupation);
+                    console.log(json_object.height);*/
+                });
+        }
+	</script>
+
+</body>
+</html>

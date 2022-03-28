@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shopping Cart</title>
+</head>
+
+<body>
+    <script>
+        var products = [{
+            pro_id: 0,
+            pro_name: "Milk",
+            price_o: 100,
+            price_d: 80
+        },
+        {
+            pro_id: 1,
+            pro_name: "Apple",
+            price_o: 300,
+            price_d: 200
+        }
+        ];
+        var cart = [];
+        do {
+            var decide = prompt("Enter command. There are 2 products with id 0 and 1");
+            var d;
+            var q1 = 0;
+            var q2 = 0;
+            var dl = decide.length;
+            dl--;
+            if (decide.includes("ADD")) {
+                d = 1;
+            }
+            if (decide.includes("DEL")) {
+                d = 2;
+            }
+            if (decide.includes("CHECK")) {
+                d = 3;
+            }
+
+            switch (d) {
+                case 1:
+                    var q = parseInt(prompt("Enter Quantity"));
+                    if (decide.charAt(dl) == "0") {
+                        cart.push(products[0]);
+                        q1 = q1 + q;
+                        cart[0].quan = q1;
+                        cart[0].price_original = cart[0].price_o * q1;
+                        cart[0].price_discount = cart[0].price_d * q1;
+
+                    }
+                    else if (decide.charAt(dl) == "1") {
+                        cart.push(products[1]);
+                        q2 = q2 + q;
+                        cart[1].quan = q2;
+                        cart[1].price_original = cart[1].price_o * q2;
+                        cart[1].price_discount = cart[1].price_d * q2;
+                    }
+
+                    console.log("Product Added");
+                    alert("Product Added");
+                    break;
+                case 2:
+                    if (cart.length != 0) {
+                        for (i = 0; i < cart.length; i++) {
+                            if (cart[i].pro_id == decide.charAt(dl)) {
+                                
+                                var nos = parseInt(prompt("There are " + cart[i].quan + " products. How many do you want to delete?"));
+                                if (nos <= cart[i].quan) {
+                                    cart[i].quan = cart[i].quan - nos;
+                                    cart[i].price_original = cart[i].price_o * cart[i].quan;
+                                    cart[i].price_discount = cart[i].price_d * cart[i].quan;
+                                    alert("Deleted Product!")
+                                }
+                                else {
+                                    alert("Invalid Quantity");
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        alert("No Items in cart");
+                    }
+                    break;
+                case 3:
+                    var coupon = prompt("Enter Coupon code");
+                    var check = 0;
+                    if (coupon.length != 5) {
+                        alert("Invalid Coupon Code!")
+                    }
+                    else if (coupon.length == 5) {
+                        alert("Valid Coupon Code!")
+                        check = 1;
+                    }
+                    alert("YOU CHECKED OUT");
+                    console.log("Total Items : " + cart.length);
+                    var discount = 0;
+                    var bill = 0;
+                    for (i = 0; i < cart.length; i++) {
+                        var d_amt = (cart[i].price_original) - (cart[i].price_discount)
+                        discount = discount + d_amt;
+                        bill = bill + cart[i].price_discount;
+                    }
+                    console.log("Total Money Saved : " + discount);
+                    console.log("Total Amount : " + bill);
+                    if (check == 1) {
+                        var minus = (12.5 / 100) * bill;
+                        bill = bill - minus;
+                        console.log("Total Amount (after applying coupon code) : " + bill);
+                    }
+                    break;
+                default: alert("Invalid Command");
+
+            }
+        } while (decide != "CHECKOUT")
+    </script>
+</body>
+
+</html>
